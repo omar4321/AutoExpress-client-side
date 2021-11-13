@@ -1,0 +1,43 @@
+.footer {
+  padding: 50px;
+  background: #1b1b1a;
+  color: rgb(255, 255, 255);
+}
+h3 {
+  font-size: 30px;
+}
+h3 .logo-1 {
+  font-weight: 700;
+  color: rgb(255, 0, 0);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h3 .logo-2 {
+  font-weight: 700;
+  color: rgb(233, 233, 233);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.first-cart img {
+  width: 200px;
+  height: 100px;
+  margin-top: 30px;
+}
+.scrollToTop {
+  background-color: tomato;
+  color: #ffffff;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: fit-content;
+  padding: 15px 20px;
+  border-radius: 2px;
+  margin: right;
+  box-shadow: rgba(0, 0, 0, 0.9) 2px 4px 8px;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: rgba(0, 0, 0, 0.9);
+}

@@ -1,0 +1,10 @@
+.nav-color {
+  color: #ffff;
+}
+.nav-color:hover {
+  color: #fff;
+}
+.log-out {
+  background-color: #e8eeee;
+  color: rgb(0, 0, 0);
+}

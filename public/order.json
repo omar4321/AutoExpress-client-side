@@ -1,0 +1,53 @@
+[
+    {
+    "id":1,
+    "name":"2011 Toyota Avalon Limited",
+    "img": "https://media-service.carmax.com/img/vehicles/21386934/1_cleaned.jpg?width=800",
+    "info": "alues displayed are estimates for illustrative purposes only and do not constitute a request for specific credit terms or an offer of credit. Pre-approval application is to determine estimated credit terms on the vehicle",
+    "price": "4000000"
+    },
+    
+    {
+        "id":2,
+        "name":"2017 Honda Accord Sport",
+        "img": "https://media-service.carmax.com/img/vehicles/21564529/1_cleaned.jpg",
+        "info": "alues displayed are estimates for illustrative purposes only and do not constitute a request for specific credit terms or an offer of credit. Pre-approval application is to determine estimated credit terms on the vehicle",
+        "price": "500000"
+    },
+     
+    {
+        "id":3,
+        "name":"Honda City",
+        "img": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Honda/City/7899/1594802649685/front-left-side-47.jpg?tr=w-456",
+        "info": "alues displayed are estimates for illustrative purposes only and do not constitute a request for specific credit terms or an offer of credit. Pre-approval application is to determine estimated credit terms on the vehicle",
+        "price": "40000000"
+    },
+     
+    {
+        "id":4,
+        "name":"Mahindra XUV300",
+        "img": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Mahindra/XUV300/7242/1598341027093/front-left-side-47.jpg?imwidth=280&impolicy=resize",
+        "info": "alues displayed are estimates for illustrative purposes only and do not constitute a request for specific credit terms or an offer of credit. Pre-approval application is to determine estimated credit terms on the vehicle",
+        "price": "300000"
+    },
+
+     
+    {
+        "id":5,
+        "name":"Hyundai Verna",
+        "img": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Hyundai/Verna/7729/1616055133475/front-left-side-47.jpg?imwidth=380&impolicy=resize",
+        "info": "alues displayed are estimates for illustrative purposes only and do not constitute a request for specific credit terms or an offer of credit. Pre-approval application is to determine estimated credit terms on the vehicle",
+        "price": "5500000"
+    },
+ 
+    {
+        "id":6,
+        "name":"Porsche Taycan",
+        "img": "https://stimg.cardekho.com/images/carexteriorimages/630x420/Porsche/Taycan/7041/1636711367887/front-left-side-47.jpg?tr=w-456",
+        "info": "alues displayed are estimates for illustrative purposes only and do not constitute a request for specific credit terms or an offer of credit. Pre-approval application is to determine estimated credit terms on the vehicle",
+        "price": "70000000"
+    }
+
+
+
+]

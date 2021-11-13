@@ -1,23 +1,55 @@
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
+import Dashboard from './component/Dashboard/Dashboard';
+import About from './component/Home/About/About';
+import Banner from './component/Home/Banner/Banner';
+import Contact from './component/Home/Contact/Contact';
+import Login from './component/Home/Login/Login/Login';
+import Reg from './component/Home/Login/Login/Reg';
+import PrivateRoute from './component/Home/Login/PrivateRoute/PrivateRoute';
+import Services from './component/Services/Services';
+import AuthProvider from './contexts/AuthProvider/AuthProvider';
+
+import Home from './pages/Home/Home';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <AuthProvider>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Home></Home>
+            </Route>
+            <Route exact path="/home">
+              <Home></Home>
+            </Route>
+            <Route exact path="/Banner">
+              <Banner></Banner>
+            </Route>
+            <Route exact path="/About">
+              <About></About>
+            </Route>
+            <Route exact path="/services">
+              <Services />
+            </Route>
+            <Route exact path="/contact">
+              <Contact></Contact>
+            </Route>
+            <PrivateRoute path="/dashboard">
+              <Dashboard></Dashboard>
+            </PrivateRoute>
+            <Route exact path="/login">
+              {' '}
+              <Login></Login>{' '}
+            </Route>
+            <Route exact path="/reg">
+              {' '}
+              <Reg> </Reg>
+            </Route>
+          </Switch>
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
