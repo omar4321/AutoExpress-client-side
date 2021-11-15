@@ -7,8 +7,8 @@ import Navber from '../Home/Navber/Navber';
 const Booking = () => {
   const { serviceId } = useParams();
   const [service, setService] = useState({});
-
   const email = sessionStorage.getItem('email');
+  console.log(email);
   useEffect(() => {
     fetch(`http://localhost:5000/singleProduct/${serviceId}`)
       .then((res) => res.json())
@@ -23,20 +23,24 @@ const Booking = () => {
     formState: { errors },
   } = useForm();
 
+  // const onSubmit = (data) => {
+  //   data.email = email;
+  //   data.status = 'pending';
+
+  //   fetch('http://localhost:5000/confirmOrder', {
+  //     method: 'POST',
+  //     headers: { 'content-type': 'application/json' },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((res) => res.json())
+  //     .then((result) => console.log(result));
+  //   console.log(data);
+  // };
+
   const onSubmit = (data) => {
     data.email = email;
-    data.status = 'pending';
-
-    fetch('http://localhost:5000/confirmOrder', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((result) => console.log(result));
     console.log(data);
   };
-
   return (
     <div>
       <Navber />

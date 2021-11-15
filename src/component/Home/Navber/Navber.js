@@ -39,15 +39,18 @@ const Navber = () => {
           <Nav.Link as={HashLink} to="/home#contact" className="nav-color">
             Contact Us
           </Nav.Link>
-          <Nav.Link as={HashLink} to="/dashboard" className="nav-color">
-            Dashboard
+          <Nav.Link as={HashLink} to="/myorder" className="nav-color">
+            my order
           </Nav.Link>
           <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            {true ? (
+            <NavDropdown.Item to="/home#contact"> Payment</NavDropdown.Item>
+            <NavDropdown.Item to="/myorder">My Order</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Review</NavDropdown.Item>
+            {/* {true ? (
               <>
                 {' '}
                 <NavDropdown.Item href="#"> Payment</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">My Order</NavDropdown.Item>
+                <NavDropdown.Item to="/myorder">My Order</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Review</NavDropdown.Item>
               </>
             ) : (
@@ -56,7 +59,7 @@ const Navber = () => {
                 <NavDropdown.Item href="#action/3.2">My Order</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">Review</NavDropdown.Item>
               </>
-            )}
+            )} */}
           </NavDropdown>
           {user?.displayName || user?.email ? (
             <Button onClick={logout} className="log-out">

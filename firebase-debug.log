@@ -1,0 +1,90 @@
+[debug] [2021-11-15T18:05:07.451Z] ----------------------------------------------------------------------
+[debug] [2021-11-15T18:05:07.456Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-15T18:05:07.457Z] CLI Version:   9.22.0
+[debug] [2021-11-15T18:05:07.457Z] Platform:      win32
+[debug] [2021-11-15T18:05:07.457Z] Node Version:  v14.18.1
+[debug] [2021-11-15T18:05:07.459Z] Time:          Tue Nov 16 2021 00:05:07 GMT+0600 (Bangladesh Standard Time)
+[debug] [2021-11-15T18:05:07.459Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-15T18:05:07.582Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-15T18:05:07.582Z] > authorizing via signed-in user (omurakib@gmail.com)
+[debug] [2021-11-15T18:05:07.583Z] [iam] checking project autoexpress-4d42d for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-15T18:05:07.587Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-15T18:05:07.588Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-15T18:05:07.903Z] <<< HTTP RESPONSE 200 {"date":"Mon, 15 Nov 2021 18:05:08 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-15T18:05:08.063Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/autoexpress-4d42d:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-11-15T18:05:09.548Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 15 Nov 2021 18:05:10 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1215","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-15T18:05:09.549Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/autoexpress-4d42d/serviceAccounts/autoexpress-4d42d@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-11-15T18:05:11.091Z] <<< HTTP RESPONSE 404 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Mon, 15 Nov 2021 18:05:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-15T18:05:11.091Z] <<< HTTP RESPONSE BODY {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2021-11-15T18:05:11.151Z] [functions] service account IAM check errored, deploy may fail: HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404,"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"headers":{"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Mon, 15 Nov 2021 18:05:12 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"},"request":{"uri":{"protocol":"https:","slashes":true,"auth":null,"host":"iam.googleapis.com","port":443,"hostname":"iam.googleapis.com","hash":null,"search":null,"query":null,"pathname":"/v1/projects/autoexpress-4d42d/serviceAccounts/autoexpress-4d42d@appspot.gserviceaccount.com:testIamPermissions","path":"/v1/projects/autoexpress-4d42d/serviceAccounts/autoexpress-4d42d@appspot.gserviceaccount.com:testIamPermissions","href":"https://iam.googleapis.com/v1/projects/autoexpress-4d42d/serviceAccounts/autoexpress-4d42d@appspot.gserviceaccount.com:testIamPermissions"},"method":"POST"}}},"exit":1,"message":"HTTP Error: 404, Unknown service account","status":404}
+[debug] [2021-11-15T18:05:11.164Z] > refreshing access token with scopes: []
+[debug] [2021-11-15T18:05:11.165Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-15T18:05:11.370Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 15 Nov 2021 18:05:12 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-15T18:05:11.446Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/autoexpress-4d42d [none]
+[debug] [2021-11-15T18:05:11.977Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/autoexpress-4d42d 200
+[debug] [2021-11-15T18:05:11.977Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/autoexpress-4d42d {"projectId":"autoexpress-4d42d","projectNumber":"915257452016","displayName":"autoexpress","name":"projects/autoexpress-4d42d","resources":{"hostingSite":"autoexpress-4d42d"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'autoexpress-4d42d'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[debug] [2021-11-15T18:05:12.277Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at new NodeError (internal/errors.js:322:7)
+    at validateString (internal/validators.js:124:11)
+    at Object.join (path.js:424:7)
+    at Config.path (C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:115:45)
+    at getChildEnvironment (C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:50:49)
+    at runTargetCommands (C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:71:14)
+    at C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:122:24
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2021-11-15T18:05:42.814Z] ----------------------------------------------------------------------
+[debug] [2021-11-15T18:05:42.819Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2021-11-15T18:05:42.820Z] CLI Version:   9.22.0
+[debug] [2021-11-15T18:05:42.820Z] Platform:      win32
+[debug] [2021-11-15T18:05:42.820Z] Node Version:  v14.18.1
+[debug] [2021-11-15T18:05:42.822Z] Time:          Tue Nov 16 2021 00:05:42 GMT+0600 (Bangladesh Standard Time)
+[debug] [2021-11-15T18:05:42.822Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-11-15T18:05:42.947Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-11-15T18:05:42.948Z] > authorizing via signed-in user (omurakib@gmail.com)
+[debug] [2021-11-15T18:05:42.948Z] [iam] checking project autoexpress-4d42d for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-11-15T18:05:42.953Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-11-15T18:05:42.953Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-15T18:05:43.223Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","date":"Mon, 15 Nov 2021 18:05:44 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-15T18:05:43.402Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/autoexpress-4d42d:testIamPermissions  
+ {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-11-15T18:05:44.770Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Mon, 15 Nov 2021 18:05:45 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1204","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-15T18:05:44.772Z] >>> HTTP REQUEST POST https://iam.googleapis.com/v1/projects/autoexpress-4d42d/serviceAccounts/autoexpress-4d42d@appspot.gserviceaccount.com:testIamPermissions  
+ {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2021-11-15T18:05:46.164Z] <<< HTTP RESPONSE 404 {"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Mon, 15 Nov 2021 18:05:47 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-15T18:05:46.165Z] <<< HTTP RESPONSE BODY {"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}}
+[debug] [2021-11-15T18:05:46.168Z] [functions] service account IAM check errored, deploy may fail: HTTP Error: 404, Unknown service account {"name":"FirebaseError","children":[],"context":{"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"response":{"statusCode":404,"body":{"error":{"code":404,"message":"Unknown service account","status":"NOT_FOUND"}},"headers":{"vary":"X-Origin, Referer, Origin,Accept-Encoding","content-type":"application/json; charset=UTF-8","date":"Mon, 15 Nov 2021 18:05:47 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"},"request":{"uri":{"protocol":"https:","slashes":true,"auth":null,"host":"iam.googleapis.com","port":443,"hostname":"iam.googleapis.com","hash":null,"search":null,"query":null,"pathname":"/v1/projects/autoexpress-4d42d/serviceAccounts/autoexpress-4d42d@appspot.gserviceaccount.com:testIamPermissions","path":"/v1/projects/autoexpress-4d42d/serviceAccounts/autoexpress-4d42d@appspot.gserviceaccount.com:testIamPermissions","href":"https://iam.googleapis.com/v1/projects/autoexpress-4d42d/serviceAccounts/autoexpress-4d42d@appspot.gserviceaccount.com:testIamPermissions"},"method":"POST"}}},"exit":1,"message":"HTTP Error: 404, Unknown service account","status":404}
+[debug] [2021-11-15T18:05:46.174Z] > refreshing access token with scopes: []
+[debug] [2021-11-15T18:05:46.175Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-11-15T18:05:46.377Z] <<< HTTP RESPONSE 200 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","cache-control":"no-cache, no-store, max-age=0, must-revalidate","date":"Mon, 15 Nov 2021 18:05:47 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"clear","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-11-15T18:05:46.577Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/autoexpress-4d42d [none]
+[debug] [2021-11-15T18:05:47.027Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/autoexpress-4d42d 200
+[debug] [2021-11-15T18:05:47.027Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/autoexpress-4d42d {"projectId":"autoexpress-4d42d","projectNumber":"915257452016","displayName":"autoexpress","name":"projects/autoexpress-4d42d","resources":{"hostingSite":"autoexpress-4d42d"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'autoexpress-4d42d'...
+[info] 
+[info] i  deploying firestore, functions, hosting 
+[debug] [2021-11-15T18:05:47.278Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at new NodeError (internal/errors.js:322:7)
+    at validateString (internal/validators.js:124:11)
+    at Object.join (path.js:424:7)
+    at Config.path (C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\config.js:115:45)
+    at getChildEnvironment (C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:50:49)
+    at runTargetCommands (C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:71:14)
+    at C:\Users\88018\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\lifecycleHooks.js:122:24
+    at processTicksAndRejections (internal/process/task_queues.js:95:5)
+[error] 
+[error] Error: An unexpected error has occurred.

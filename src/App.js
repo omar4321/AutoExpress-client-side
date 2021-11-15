@@ -14,6 +14,8 @@ import AuthProvider from './contexts/AuthProvider/AuthProvider';
 import Home from './pages/Home/Home';
 import Addnewcar from './component/Dashboard/Addnewcar/Addnewcar';
 import Booking from './component/Booking/Booking';
+import MyOrders from './component/Dashboard/Myorder/MyOrders';
+import Admin from './component/Dashboard/Adadmin/Admin';
 
 function App() {
   return (
@@ -42,6 +44,9 @@ function App() {
             <Route exact path="/addcar">
               <Addnewcar> </Addnewcar>
             </Route>
+            <Route exact path="/admin">
+              <Admin> </Admin>
+            </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
@@ -55,6 +60,9 @@ function App() {
             </Route>
             <PrivateRoute exact path="/booking/:serviceId">
               <Booking></Booking>
+            </PrivateRoute>
+            <PrivateRoute exact path="/myorder">
+              <MyOrders></MyOrders>
             </PrivateRoute>
             <Route exact path="/*">
               <NotFound> </NotFound>

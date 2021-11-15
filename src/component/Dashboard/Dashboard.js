@@ -1,13 +1,11 @@
 import React from 'react';
-import Addnewcar from './Addnewcar/Addnewcar';
 
-import Review from './Review/Review';
+import MyOrders from './Myorder/MyOrders';
 
 const Dashboard = () => {
   return (
     <div>
-      <Addnewcar> </Addnewcar>
-      <Review> </Review>
+      <MyOrders></MyOrders>
     </div>
   );
 };

@@ -1,9 +1,19 @@
-import React, { createContext, useEffect } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import useFirebase from '../../hooks/useFirebase';
 
-export const AuthContext = createContext({ isadmin: false });
+export const AuthContext = createContext(null);
 
 const AuthProvider = ({ children }) => {
+  const [userInfo, setUserInfo] = useState({
+    isLogin: false,
+    name: '',
+    email: '',
+    img: '',
+  });
+  const [message, setMessage] = useState({
+    error: '',
+    success: '',
+  });
   const allContexts = useFirebase();
   const user = allContexts.user;
   // console.log(user);
@@ -12,7 +22,9 @@ const AuthProvider = ({ children }) => {
     }
   }, [user]);
   return (
-    <AuthContext.Provider value={{ ...allContexts, isadmin: false }}>
+    <AuthContext.Provider
+      value={{ ...allContexts, userInfo, setUserInfo, message, setMessage }}
+    >
       {children}
     </AuthContext.Provider>
   );
