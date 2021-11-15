@@ -14,7 +14,7 @@ import initializeFirebase from '../component/Home/Login/Login/Firebase/firebase.
 const googleProvider = new GoogleAuthProvider();
 initializeFirebase();
 const useFirebase = () => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({ isadmin: false });
   const [isLoading, setIsLoading] = useState(true);
   const [authError, setAuthError] = useState('');
 
@@ -26,7 +26,8 @@ const useFirebase = () => {
       .then((userCredential) => {
         setAuthError('');
         const newUser = { email, displayName: name };
-        setUser(newUser);
+
+        setUser({ isadmin: false });
         updateProfile(auth.currentUser, {
           displayName: name,
         })
@@ -54,7 +55,9 @@ const useFirebase = () => {
         const destination = location?.state?.from || '/';
         history.replace(destination);
         setAuthError('');
+        // console.log(userCredential);
       })
+
       .catch((error) => {
         setAuthError(error.message);
       })
@@ -80,9 +83,16 @@ const useFirebase = () => {
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
-        setUser(user);
+        fetch('http://localhost:5000/isadmin', {
+          method: 'POST',
+          body: JSON.stringify({ email: user.email }),
+        })
+          .then((res) => res.json())
+          .then((data) => console.log(data));
+        setUser({ ...user });
+        // console.log(user);
       } else {
-        setUser({});
+        setUser({ isuser: false });
       }
       setIsLoading(false);
     });

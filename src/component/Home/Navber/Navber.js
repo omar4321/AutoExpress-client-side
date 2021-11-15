@@ -1,7 +1,7 @@
 // import Button from '@restart/ui/esm/Button';
 import Button from '@restart/ui/esm/Button';
 import React from 'react';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
@@ -9,7 +9,9 @@ import useAuth from '../../../hooks/useAuth';
 import './Navber.css';
 
 const Navber = () => {
-  const { user, logout } = useAuth();
+  const { user, logout, isadmin } = useAuth();
+  // console.log(isadmin);
+  // console.log(user);
   return (
     <Navbar bg="dark" variant="light" collapseOnSelect expand="lg">
       <Container>
@@ -40,8 +42,23 @@ const Navber = () => {
           <Nav.Link as={HashLink} to="/dashboard" className="nav-color">
             Dashboard
           </Nav.Link>
-
-          {user?.displayName ? (
+          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+            {true ? (
+              <>
+                {' '}
+                <NavDropdown.Item href="#"> Payment</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">My Order</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Review</NavDropdown.Item>
+              </>
+            ) : (
+              <>
+                <NavDropdown.Item href="#"> Payment</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">My Order</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.3">Review</NavDropdown.Item>
+              </>
+            )}
+          </NavDropdown>
+          {user?.displayName || user?.email ? (
             <Button onClick={logout} className="log-out">
               Logout <i class="fas fa-sign-out-alt"></i>
             </Button>
@@ -53,9 +70,6 @@ const Navber = () => {
           <Navbar.Text>
             {/* Signed in as: {user ? user.displayName : ''} */}
           </Navbar.Text>
-          <Nav.Link as={Link} to="/cart">
-            <i id="icon" className="fas fa-cart-plus "></i>{' '}
-          </Nav.Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

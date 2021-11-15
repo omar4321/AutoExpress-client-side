@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import { Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../../hooks/useAuth';
-import Swal from 'sweetalert2';
+// import Swal from 'sweetalert2';
 
 const Reg = () => {
   const [loginData, setLoginData] = useState({});
@@ -22,8 +22,10 @@ const Reg = () => {
     if (loginData.password !== loginData.password2) {
       alert('Your password did not match');
       return;
+    } else {
+      registerUser(loginData.email, loginData.password);
     }
-    registerUser(loginData.email, loginData.password);
+
     e.preventDefault();
   };
   return (
@@ -34,7 +36,7 @@ const Reg = () => {
       <Row>
         <Col xs={12} md={6} sm={12}>
           {!isLoading && (
-            <Form onSubmit={handleLoginSubmit}>
+            <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Your Full Name</Form.Label>
                 <Form.Control
@@ -80,7 +82,11 @@ const Reg = () => {
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="Check me out" />
               </Form.Group>
-              <Button variant="danger"> Submit</Button>
+              <Button onClick={handleLoginSubmit} variant="danger">
+                {' '}
+                Submit
+              </Button>
+
               <p className="text-primary mb-5 ">
                 Already have an account? <Link to="/login">Login Now</Link>
               </p>
@@ -88,7 +94,7 @@ const Reg = () => {
           )}
 
           {isLoading && <Spinner animation="border" variant="warning" />}
-          {user?.email &&
+          {/* {user?.email &&
             Swal.fire({
               position: 'top-end',
               icon: 'success',
@@ -102,7 +108,7 @@ const Reg = () => {
               title: 'Oops...',
               text: { authError },
               footer: '<a href="">Why do I have this issue?</a>',
-            })}
+            })} */}
         </Col>
         <Col xs={12} md={6} sm={12}>
           {' '}

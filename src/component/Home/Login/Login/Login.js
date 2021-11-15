@@ -36,7 +36,7 @@ const Login = () => {
       </h1>
       <Row>
         <Col xs={12} md={6} sm={12}>
-          <Form onSubmit={handleLoginSubmit}>
+          <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control
@@ -63,7 +63,10 @@ const Login = () => {
             <Form.Group className="mb-3" controlId="formBasicCheckbox">
               <Form.Check type="checkbox" label="Check me out" />
             </Form.Group>
-            <Button variant="danger"> Login</Button>
+            <Button onClick={handleLoginSubmit} variant="danger">
+              {' '}
+              Login
+            </Button>
             <p className="mt-4  text-primary">
               new to AutoExpress? <Link to="/reg">Create Account</Link>
             </p>
@@ -77,22 +80,7 @@ const Login = () => {
               </span>{' '}
               Google sign In
             </Button>
-            {/* {isLoading && <Spinner animation="border" variant="warning" />}
-            {user?.email &&
-              Swal.fire({
-                position: 'top-end',
-                icon: 'success',
-                title: 'User Created successfully!',
-                showConfirmButton: false,
-                timer: 1500,
-              })}
-            {authError &&
-              Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: { authError },
-                footer: '<a href="">Why do I have this issue?</a>',
-              })} */}
+            {isLoading && <Spinner animation="border" variant="warning" />}
           </Form>
         </Col>
         <Col xs={12} md={6} sm={12}>

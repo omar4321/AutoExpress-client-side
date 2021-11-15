@@ -8,9 +8,12 @@ import Login from './component/Home/Login/Login/Login';
 import Reg from './component/Home/Login/Login/Reg';
 import PrivateRoute from './component/Home/Login/PrivateRoute/PrivateRoute';
 import Services from './component/Services/Services';
+import NotFound from './component/Home/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
 
 import Home from './pages/Home/Home';
+import Addnewcar from './component/Dashboard/Addnewcar/Addnewcar';
+import Booking from './component/Booking/Booking';
 
 function App() {
   return (
@@ -36,6 +39,9 @@ function App() {
             <Route exact path="/contact">
               <Contact></Contact>
             </Route>
+            <Route exact path="/addcar">
+              <Addnewcar> </Addnewcar>
+            </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
             </PrivateRoute>
@@ -46,6 +52,12 @@ function App() {
             <Route exact path="/reg">
               {' '}
               <Reg> </Reg>
+            </Route>
+            <PrivateRoute exact path="/booking/:serviceId">
+              <Booking></Booking>
+            </PrivateRoute>
+            <Route exact path="/*">
+              <NotFound> </NotFound>
             </Route>
           </Switch>
         </Router>
