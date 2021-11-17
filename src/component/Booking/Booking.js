@@ -10,7 +10,7 @@ const Booking = () => {
   const email = sessionStorage.getItem('email');
   console.log(email);
   useEffect(() => {
-    fetch(`http://localhost:5000/singleProduct/${serviceId}`)
+    fetch(`https://stark-shore-90581.herokuapp.com/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

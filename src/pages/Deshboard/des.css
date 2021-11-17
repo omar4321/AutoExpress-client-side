@@ -1,0 +1,24 @@
+.nav-color {
+  color: rgb(194, 214, 202);
+}
+.nav-color:hover {
+  color: #fff;
+}
+.log-out {
+  background-color: #e8eeee;
+  color: rgb(0, 0, 0);
+  margin-left: 10px;
+}
+h3 {
+  font-size: 30px;
+}
+h3 span .logo-1 {
+  font-weight: 700;
+  color: rgb(255, 0, 0);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h3 .logo-2 {
+  font-weight: 700;
+  color: rgb(173, 41, 41);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

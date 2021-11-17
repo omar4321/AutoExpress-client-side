@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
-import Dashboard from './component/Dashboard/Dashboard';
+
 import About from './component/Home/About/About';
 import Banner from './component/Home/Banner/Banner';
 import Contact from './component/Home/Contact/Contact';
@@ -10,12 +10,12 @@ import PrivateRoute from './component/Home/Login/PrivateRoute/PrivateRoute';
 import Services from './component/Services/Services';
 import NotFound from './component/Home/NotFound/NotFound';
 import AuthProvider from './contexts/AuthProvider/AuthProvider';
-
+import Deshboard from './pages/Deshboard/Deshboard';
 import Home from './pages/Home/Home';
-import Addnewcar from './component/Dashboard/Addnewcar/Addnewcar';
+
 import Booking from './component/Booking/Booking';
-import MyOrders from './component/Dashboard/Myorder/MyOrders';
-import Admin from './component/Dashboard/Adadmin/Admin';
+// import Addnewcar from './component/Dashboard/Addnewcar/Addnewcar';
+// import Pyment from './component/Dashboard/Pyment';
 
 function App() {
   return (
@@ -41,14 +41,14 @@ function App() {
             <Route exact path="/contact">
               <Contact></Contact>
             </Route>
-            <Route exact path="/addcar">
-              <Addnewcar> </Addnewcar>
-            </Route>
-            <Route exact path="/admin">
-              <Admin> </Admin>
-            </Route>
+            {/* <Route exact path="/addcar">
+              <Addnewcar />
+            </Route> */}
+            {/* <Route exact path="/payment">
+              <Pyment> </Pyment>
+            </Route> */}
             <PrivateRoute path="/dashboard">
-              <Dashboard></Dashboard>
+              <Deshboard></Deshboard>
             </PrivateRoute>
             <Route exact path="/login">
               {' '}
@@ -61,9 +61,7 @@ function App() {
             <PrivateRoute exact path="/booking/:serviceId">
               <Booking></Booking>
             </PrivateRoute>
-            <PrivateRoute exact path="/myorder">
-              <MyOrders></MyOrders>
-            </PrivateRoute>
+            <PrivateRoute exact path="/myorder"></PrivateRoute>
             <Route exact path="/*">
               <NotFound> </NotFound>
             </Route>

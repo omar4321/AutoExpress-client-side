@@ -1,7 +1,10 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from 'react-hook-form';
+
+import Showdata from '../Showdata';
 import './addcar.css';
+
 const Addnewcar = () => {
   const {
     register,
@@ -10,20 +13,21 @@ const Addnewcar = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    axios.post('http://localhost:5000/carcollection', data).then((res) => {
-      console.log(res);
-      if (res.data.insertedId) {
-        alert('added successfully');
-        reset();
-      }
-    });
+    axios
+      .post('https://stark-shore-90581.herokuapp.com/carcollection', data)
+      .then((res) => {
+        console.log(res);
+        if (res.data.insertedId) {
+          alert('added successfully');
+          reset();
+        }
+      });
     console.log(data);
   };
   return (
     <>
-      <h1 className="text-center">Add new car for sell</h1>
-
-      <div className="add-service">
+      <div className="add-service w-50 m-auto">
+        <h1 className="text-center">Add new car for sell</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* register your input into the hook by invoking the "register" function */}
           <input {...register('name')} placeholder="enter name" />
@@ -39,6 +43,8 @@ const Addnewcar = () => {
           <input type="submit" />
         </form>
       </div>
+      <br />
+      <Showdata> </Showdata>
     </>
   );
 };
