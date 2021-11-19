@@ -14,7 +14,7 @@ const Addnewcar = () => {
   } = useForm();
   const onSubmit = (data) => {
     axios
-      .post('https://stark-shore-90581.herokuapp.com/carcollection', data)
+      .post('https://immense-citadel-04448.herokuapp.com/carcollection', data)
       .then((res) => {
         console.log(res);
         if (res.data.insertedId) {

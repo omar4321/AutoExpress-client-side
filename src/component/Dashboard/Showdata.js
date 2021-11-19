@@ -5,7 +5,7 @@ import ListData from './ListData';
 const Showdata = () => {
   const [service, setService] = useState([]);
   useEffect(() => {
-    fetch('https://stark-shore-90581.herokuapp.com/carcollection')
+    fetch('https://immense-citadel-04448.herokuapp.com/carcollection')
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);

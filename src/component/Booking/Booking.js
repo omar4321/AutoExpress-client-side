@@ -10,7 +10,7 @@ const Booking = () => {
   const email = sessionStorage.getItem('email');
   console.log(email);
   useEffect(() => {
-    fetch(`https://stark-shore-90581.herokuapp.com/${serviceId}`)
+    fetch(`https://immense-citadel-04448.herokuapp.com/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -27,7 +27,7 @@ const Booking = () => {
   //   data.email = email;
   //   data.status = 'pending';
 
-  //   fetch('http://localhost:5000/confirmOrder', {
+  //   fetch('https://stark-shore-90581.herokuapp.com/confirmOrder', {
   //     method: 'POST',
   //     headers: { 'content-type': 'application/json' },
   //     body: JSON.stringify(data),

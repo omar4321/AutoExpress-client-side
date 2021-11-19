@@ -11,7 +11,7 @@ const Makeadmin = () => {
   };
   const handdleAdminSubmit = (e) => {
     const user = { email };
-    fetch('http://localhost:5000/users/admin', {
+    fetch('https://immense-citadel-04448.herokuapp.com/users/admin', {
       method: 'PUT',
       headers: {
         authorization: `Bearer ${token}`,
