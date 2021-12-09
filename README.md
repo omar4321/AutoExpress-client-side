@@ -22,7 +22,7 @@ I'm a full stack developer...
 
 আমরা বিভিন্ন React এ আলাদা আলাদা ভাবে React Componet ব্যবহার করবো তাই আমাদের rsc ফোল্ডার এ Components নাম ফোল্ডার বানাতে হবে CSS Module ব্যবহার করা হবে। কারণ CSS Module CSS এর Scope তৈরী করে। ফলে সিস এর কোনো Problem হয় না
 
-![Logo](https://omar-faruk224.imgbb.com/)
+
 
 ## Tech Stack
 
