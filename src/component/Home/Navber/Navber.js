@@ -1,7 +1,7 @@
 // import Button from '@restart/ui/esm/Button';
 import Button from '@restart/ui/esm/Button';
 import React from 'react';
-import { Container, Navbar, Nav } from 'react-bootstrap';
+import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
@@ -10,6 +10,7 @@ import './Navber.css';
 
 const Navber = () => {
   const { user, logout } = useAuth();
+  const { displayName, photoURL, email, uid } = user;
   // console.log(isadmin);
   // console.log(user);
   return (
@@ -48,9 +49,28 @@ const Navber = () => {
               <Nav.Link className="nav-color" as={Link} to="/dashboard">
                 dashboard
               </Nav.Link>
-              <Button onClick={logout} className="log-out nav-color  ">
-                Logout <i class="fas fa-sign-out-alt"></i>
-              </Button>
+              <NavDropdown
+                title={
+                  <img
+                    style={{
+                      width: '40px',
+                      borderRadius: '50%',
+                    }}
+                    src={photoURL}
+                    alt=""
+                  />
+                }
+              >
+                <div className="text-center d-flex justify-content-center  align-items-center ">
+                  <div>
+                    <h6>{displayName}</h6>
+                    <p className="m-0 ">{email}</p>
+                    <button onClick={logout} className="btn btn-primary">
+                      Sign Out
+                    </button>
+                  </div>
+                </div>
+              </NavDropdown>
             </>
           ) : (
             <Nav.Link as={Link} to="/login">
